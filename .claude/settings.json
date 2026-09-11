@@ -1,0 +1,71 @@
+{
+  "$schema": "https://www.schemastore.org/claude-code-settings.json",
+  "showThinkingSummaries": true,
+  "skillListingBudgetFraction": 0.035,
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
+  "env": {
+    "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR": "1",
+    "CLAUDE_CODE_DISABLE_OFFICIAL_MARKETPLACE_AUTOINSTALL": "1",
+    "CLAUDE_CODE_ENABLE_TODO_TOOLS": "1",
+    "CLAUDE_CODE_FORK_SUBAGENT": "1",
+    "CLAUDE_CODE_HIDE_CWD": "1",
+    "DISABLE_ERROR_REPORTING": "1",
+    "DISABLE_TELEMETRY": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(bun run dev*)",
+      "Bash(bunx vite build*)",
+      "Bash(bunx vite preview*)",
+      "Bash(wrangler dev *)",
+      "Bash(rtk git grep *)",
+      "Bash(rtk git status)",
+      "Bash(rtk git diff*)",
+      "Bash(rtk git log*)",
+      "Bash(rtk git show*)",
+      "WebSearch",
+      "mcp__cloudflare-docs__search_cloudflare_documentation"
+    ],
+    "deny": [
+      "Bash(git config *)",
+      "Bash(git push * -f*)",
+      "Bash(git push *--force*)",
+      "Bash(git push *--mirror*)",
+      "Bash(git push * main*)",
+      "Bash(git push origin HEAD*)",
+      "Bash(git push * prod*)",
+      "Bash(*--no-verify*)",
+      "Bash(git commit * -n)",
+      "Bash(git commit * -n *)",
+      "Bash(gh pr merge*)",
+      "Bash(gh repo delete*)",
+      "Bash(gh workflow run*)",
+      "Bash(gh workflow disable*)",
+      "Bash(gh secret set*)",
+      "Bash(gh secret delete*)",
+      "Bash(gh variable set*)",
+      "Bash(gh variable delete*)",
+      "Bash(*HUSKY=0*)",
+      "Bash(*core.hooksPath*)",
+      "Bash(rm*.husky*)",
+      "Bash(chmod*.husky*)",
+      "Bash(*wrangler delete*)",
+      "Bash(*wrangler deploy*)",
+      "Bash(*wrangler versions deploy*)",
+      "Bash(*wrangler triggers deploy*)",
+      "Bash(*wrangler dev*--remote*)",
+      "Bash(*wrangler secret*)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "cloudflare-api",
+    "cloudflare-docs",
+    "cloudflare-bindings",
+    "cloudflare-builds",
+    "cloudflare-observability"
+  ]
+}
