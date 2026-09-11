@@ -19,11 +19,14 @@ export function MessageItem({ message }: MessageItemProps) {
 	const segments = buildSegments(message.content);
 
 	return (
-		<li className="border-b border-border py-4">
-			<p className="whitespace-pre-wrap break-words [overflow-wrap:anywhere]">
+		<li className="py-2">
+			<p className="whitespace-pre-wrap wrap-anywhere">
 				{segments.map((segment, index) =>
 					segment.bold ? (
-						<strong key={index} className="text-[32px] leading-tight font-bold">
+						<strong
+							key={index}
+							className="text-[32px] leading-[1.125] font-bold"
+						>
 							{segment.text}
 						</strong>
 					) : (
@@ -33,7 +36,7 @@ export function MessageItem({ message }: MessageItemProps) {
 			</p>
 			<time
 				dateTime={new Date(message.createdAt).toISOString()}
-				className="mt-1 block text-sm text-foreground/60"
+				className="mt-1 block text-sm text-foreground/40"
 			>
 				{dateFormatter.format(message.createdAt)}
 			</time>
