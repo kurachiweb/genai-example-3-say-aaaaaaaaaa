@@ -1,5 +1,7 @@
 # シンプルでバイラルな匿名掲示板「Say aaaaaaaaaa」
 
+公開URL：https://say-aaaaaaaaaa.kurachiweb.com
+
 ## このサービスについて
 
 匿名でメッセージを投稿する単一ページの掲示板サイト。
