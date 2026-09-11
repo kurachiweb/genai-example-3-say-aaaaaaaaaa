@@ -9,12 +9,16 @@ export function useMessages() {
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 	const initialized = useRef(false);
+	// isLoading state の反映は非同期なため、同一tick内での多重呼び出しを防ぐには使えない。
+	// ref で同期的にガードする。
+	const isLoadingRef = useRef(false);
 
 	const loadMore = useCallback(async () => {
-		if (isLoading || !hasMore) {
+		if (isLoadingRef.current || !hasMore) {
 			return;
 		}
 
+		isLoadingRef.current = true;
 		setIsLoading(true);
 		setError(null);
 
@@ -26,9 +30,10 @@ export function useMessages() {
 		} catch {
 			setError("Failed to load messages.");
 		} finally {
+			isLoadingRef.current = false;
 			setIsLoading(false);
 		}
-	}, [cursor, hasMore, isLoading]);
+	}, [cursor, hasMore]);
 
 	useEffect(() => {
 		if (initialized.current) {
