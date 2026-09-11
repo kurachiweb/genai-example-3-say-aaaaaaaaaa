@@ -1,28 +1,9 @@
-# 環境変数(シークレットを含む)
+node_modules/
+dist/
+.wrangler/
+.vite/
+*.log
+.DS_Store
 .env
 .env.*
-
-# Wranglerのローカルシークレットファイル
-.dev.vars
-.dev.vars.*
-
-# Nodeパッケージ
-node_modules
-
-# OS生成ファイル
-# macOS
-.DS_Store
-# Windows
-Thumbs.db
-desktop.ini
-# Linux(KDE Plasma)
-.directory
-
-# フロントエンドのビルド成果物
-.tanstack
-.output
-dist
-*.tsbuildinfo
-
-# 生成AI用
-.claude/settings.local.json
+!.env.example
