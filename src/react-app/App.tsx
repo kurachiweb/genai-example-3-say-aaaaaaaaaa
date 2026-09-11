@@ -7,7 +7,7 @@ function App() {
 		useMessages();
 
 	return (
-		<div className="mx-auto flex min-h-dvh max-w-2xl flex-col gap-6 px-4 py-4">
+		<div className="mx-auto flex min-h-dvh max-w-4xl flex-col gap-6 px-4 py-4">
 			<header>
 				<h1 className="text-2xl font-bold">Say aaaaaaaaaa</h1>
 			</header>
