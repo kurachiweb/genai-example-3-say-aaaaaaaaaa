@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+	--color-background: #f5f5f4;
+	--color-foreground: #0c0a09;
+	--color-primary: #dd4104;
+	--color-primary-foreground: #ffffff;
+	--color-border: #e7e5e4;
+	--color-input: #e7e5e4;
+	--color-ring: #dd4104;
+	--radius: 0.5rem;
+}
+
+@layer base {
+	* {
+		border-color: var(--color-border);
+	}
+
+	body {
+		background-color: var(--color-background);
+		color: var(--color-foreground);
+		font-size: 20px;
+		line-height: 1.7;
+	}
+}
