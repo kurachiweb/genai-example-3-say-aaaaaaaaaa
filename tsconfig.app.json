@@ -14,10 +14,12 @@
 		"moduleDetection": "force",
 		"noEmit": true,
 		"jsx": "react-jsx",
+		"types": ["vite/client"],
 
 		/* Path alias for shadcn/ui-style imports */
 		"paths": {
-			"@/*": ["./src/react-app/*"]
+			"@/*": ["./src/react-app/*"],
+			"@shared/*": ["./src/shared/*"]
 		},
 
 		/* Linting */
