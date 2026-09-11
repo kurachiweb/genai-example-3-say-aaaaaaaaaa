@@ -54,7 +54,7 @@ export function MessageForm({ onPosted }: MessageFormProps) {
 				rows={3}
 			/>
 			<Button type="submit" disabled={!canSubmit}>
-				{isSubmitting ? "Sending…" : "Scream!!!"}
+				{isSubmitting ? "Sending…" : "😆 Scream!!!"}
 			</Button>
 			<p className="text-sm text-foreground/60">
 				{charCount} / {MAX_MESSAGE_LENGTH}
