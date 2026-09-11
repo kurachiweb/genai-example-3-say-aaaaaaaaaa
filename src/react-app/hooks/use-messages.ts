@@ -40,9 +40,21 @@ export function useMessages() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	const prepend = useCallback((message: Message) => {
-		setMessages((prev) => [message, ...prev]);
+	const refresh = useCallback(async () => {
+		setIsLoading(true);
+		setError(null);
+
+		try {
+			const result = await fetchMessages(null);
+			setMessages(result.messages);
+			setCursor(result.nextCursor);
+			setHasMore(result.nextCursor !== null);
+		} catch {
+			setError("Failed to load messages.");
+		} finally {
+			setIsLoading(false);
+		}
 	}, []);
 
-	return { messages, isLoading, hasMore, error, loadMore, prepend };
+	return { messages, isLoading, hasMore, error, loadMore, refresh };
 }

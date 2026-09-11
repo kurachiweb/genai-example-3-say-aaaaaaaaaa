@@ -3,10 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { postMessage } from "@/lib/api";
 import { createMessageSchema, MAX_MESSAGE_LENGTH } from "@shared/schema";
-import type { Message } from "@shared/types";
 
 interface MessageFormProps {
-	onPosted: (message: Message) => void;
+	onPosted: () => void | Promise<void>;
 }
 
 export function MessageForm({ onPosted }: MessageFormProps) {
@@ -32,7 +31,7 @@ export function MessageForm({ onPosted }: MessageFormProps) {
 
 		if (outcome.ok) {
 			setContent("");
-			onPosted(outcome.message);
+			await onPosted();
 			return;
 		}
 

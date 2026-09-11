@@ -3,7 +3,7 @@ import { MessageList } from "@/components/message-list";
 import { useMessages } from "@/hooks/use-messages";
 
 function App() {
-	const { messages, isLoading, hasMore, error, loadMore, prepend } =
+	const { messages, isLoading, hasMore, error, loadMore, refresh } =
 		useMessages();
 
 	return (
@@ -12,7 +12,7 @@ function App() {
 				<h1 className="text-2xl font-bold">Say aaaaaaaaaa</h1>
 			</header>
 
-			<MessageForm onPosted={prepend} />
+			<MessageForm onPosted={refresh} />
 
 			<MessageList
 				messages={messages}
