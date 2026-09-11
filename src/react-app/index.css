@@ -23,3 +23,49 @@
 		line-height: 1.7;
 	}
 }
+
+@layer components {
+	.text-explosion-particle {
+		position: fixed;
+		inset: 0 auto auto 0;
+		max-width: 90vw;
+		animation-name: text-explosion-fade;
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
+		will-change: transform, opacity;
+	}
+
+	.text-explosion-particle-inner {
+		display: inline-block;
+		white-space: pre-wrap;
+		overflow-wrap: anywhere;
+		text-align: center;
+		font-size: 32px;
+		line-height: 1.125;
+		font-weight: 700;
+		color: var(--color-foreground);
+		animation-name: text-explosion-spin;
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
+		will-change: transform;
+	}
+}
+
+@keyframes text-explosion-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(var(--rot));
+	}
+}
+
+@keyframes text-explosion-fade {
+	0%,
+	60% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}

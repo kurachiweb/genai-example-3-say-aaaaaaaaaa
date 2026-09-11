@@ -1,5 +1,6 @@
 import { findRepeatedRuns } from "@shared/repeated-run";
 import type { Message } from "@shared/types";
+import { explodeText } from "@/components/text-explosion";
 
 const dateFormatter = new Intl.DateTimeFormat("ja-JP", {
 	timeZone: "Asia/Tokyo",
@@ -25,7 +26,10 @@ export function MessageItem({ message }: MessageItemProps) {
 					segment.bold ? (
 						<strong
 							key={index}
-							className="text-[32px] leading-[1.125] font-bold"
+							className="cursor-pointer text-[32px] leading-[1.125] font-bold"
+							onClick={(event) =>
+								explodeText(segment.text, event.clientX, event.clientY)
+							}
 						>
 							{segment.text}
 						</strong>

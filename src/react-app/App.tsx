@@ -1,5 +1,6 @@
 import { MessageForm } from "@/components/message-form";
 import { MessageList } from "@/components/message-list";
+import { TextExplosionLayer } from "@/components/text-explosion";
 import { useMessages } from "@/hooks/use-messages";
 
 function App() {
@@ -31,6 +32,8 @@ function App() {
 				error={error}
 				onLoadMore={loadMore}
 			/>
+
+			<TextExplosionLayer />
 		</div>
 	);
 }
