@@ -10,7 +10,9 @@
 	"upload_source_maps": true,
 	"routes": [
 		{
-			"pattern": "say-aaaaaaaaaa.kurachiweb.com/*",
+			// Custom Domain はホスト名のみ指定可能（ワイルドカード/パス不可）で、
+			// そのホスト宛の全リクエストをこのWorkerへルーティングする
+			"pattern": "say-aaaaaaaaaa.kurachiweb.com",
 			"custom_domain": true,
 		},
 	],
