@@ -44,10 +44,11 @@ export function MessageForm({ onPosted }: MessageFormProps) {
 
 	return (
 		<form onSubmit={handleSubmit} className="flex flex-col gap-2">
+			<p>Enter the same character 10 or more times in a row.</p>
 			<Textarea
 				value={content}
 				onChange={(event) => setContent(event.target.value)}
-				placeholder="Enter the same character 10 or more times in a row (e.g. aaaaaaaaaa)"
+				placeholder="e.g. Hellooooooooooooooooo!"
 				aria-label="Message to post"
 				maxLength={MAX_MESSAGE_LENGTH}
 				rows={3}
