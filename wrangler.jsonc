@@ -1,0 +1,36 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "say-aaaaaaaaaa",
+	"main": "./src/worker/index.ts",
+	// wrangler deploy/dev のたびに最新日付へ更新してください
+	"compatibility_date": "2026-09-11",
+	"observability": {
+		"enabled": true,
+	},
+	"upload_source_maps": true,
+	"routes": [
+		{
+			"pattern": "say-aaaaaaaaaa.kurachiweb.com/*",
+			"custom_domain": true,
+		},
+	],
+	"assets": {
+		"directory": "./dist/client",
+		"not_found_handling": "single-page-application",
+		"run_worker_first": ["/api/*"],
+	},
+	"durable_objects": {
+		"bindings": [
+			{
+				"name": "BOARD",
+				"class_name": "BoardDurableObject",
+			},
+		],
+	},
+	"migrations": [
+		{
+			"tag": "v1",
+			"new_sqlite_classes": ["BoardDurableObject"],
+		},
+	],
+}
