@@ -38,8 +38,8 @@ export function MessageForm({ onPosted }: MessageFormProps) {
 
 		setErrorMessage(
 			outcome.reason === "rate_limited"
-				? "投稿が多すぎます。しばらくしてからもう一度お試しください。"
-				: "投稿に失敗しました。内容を確認してもう一度お試しください。",
+				? "Too many posts. Please try again later."
+				: "Failed to post. Please check your message and try again.",
 		);
 	};
 
@@ -48,13 +48,13 @@ export function MessageForm({ onPosted }: MessageFormProps) {
 			<Textarea
 				value={content}
 				onChange={(event) => setContent(event.target.value)}
-				placeholder="同じ文字を10文字以上連続で入力してください（例: aaaaaaaaaa）"
-				aria-label="投稿するメッセージ"
+				placeholder="Enter the same character 10 or more times in a row (e.g. aaaaaaaaaa)"
+				aria-label="Message to post"
 				maxLength={MAX_MESSAGE_LENGTH}
 				rows={3}
 			/>
 			<Button type="submit" disabled={!canSubmit}>
-				{isSubmitting ? "送信中…" : "送信"}
+				{isSubmitting ? "Sending…" : "Scream!!!"}
 			</Button>
 			<p className="text-sm text-foreground/60">
 				{charCount} / {MAX_MESSAGE_LENGTH}

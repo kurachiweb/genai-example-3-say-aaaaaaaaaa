@@ -24,7 +24,7 @@ export function useMessages() {
 			setCursor(result.nextCursor);
 			setHasMore(result.nextCursor !== null);
 		} catch {
-			setError("メッセージの取得に失敗しました。");
+			setError("Failed to load messages.");
 		} finally {
 			setIsLoading(false);
 		}

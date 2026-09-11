@@ -50,14 +50,14 @@ export function MessageList({
 
 			{!isLoading && !error && messages.length === 0 && (
 				<p className="py-4 text-center text-foreground/60">
-					まだ投稿がありません。
+					There are no posts yet.
 				</p>
 			)}
 
 			{hasMore && <div ref={sentinelRef} aria-hidden className="h-1" />}
 
 			{isLoading && (
-				<p className="py-4 text-center text-foreground/60">読み込み中…</p>
+				<p className="py-4 text-center text-foreground/60">Loading…</p>
 			)}
 		</div>
 	);

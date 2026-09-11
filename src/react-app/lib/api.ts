@@ -10,7 +10,7 @@ export async function fetchMessages(
 
 	const res = await fetch(url);
 	if (!res.ok) {
-		throw new Error("メッセージの取得に失敗しました");
+		throw new Error("Failed to retrieve the message");
 	}
 	return (await res.json()) as ListMessagesResult;
 }

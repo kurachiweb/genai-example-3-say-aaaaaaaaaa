@@ -6,14 +6,14 @@ export const MAX_MESSAGE_LENGTH = 500;
 export const createMessageSchema = z.object({
 	content: z
 		.string()
-		.min(1, "メッセージを入力してください")
+		.min(1, "Please enter a message")
 		.refine(
 			(value) => Array.from(value).length <= MAX_MESSAGE_LENGTH,
-			`メッセージは${MAX_MESSAGE_LENGTH}文字以内で入力してください`,
+			`Message must be ${MAX_MESSAGE_LENGTH} characters or fewer`,
 		)
 		.refine(
 			(value) => hasRepeatedRun(value),
-			`同じ文字（アルファベット・漢字・ひらがな・カタカナ・ハングル）を${MIN_RUN_LENGTH}文字以上連続で入力してください`,
+			`Enter the same character (letters, kanji, hiragana, katakana, or hangul) ${MIN_RUN_LENGTH} or more times in a row`,
 		),
 });
 
